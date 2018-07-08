@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Transform feedback", "Transform feedback\Transform feedback.vcxproj", "{55ABA744-91D2-4B27-AFD6-95086FF985DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Debug|x64.ActiveCfg = Debug|x64
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Debug|x64.Build.0 = Debug|x64
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Debug|x86.ActiveCfg = Debug|Win32
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Debug|x86.Build.0 = Debug|Win32
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Release|x64.ActiveCfg = Release|x64
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Release|x64.Build.0 = Release|x64
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Release|x86.ActiveCfg = Release|Win32
+		{55ABA744-91D2-4B27-AFD6-95086FF985DD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
