@@ -42,6 +42,9 @@
     <ClCompile Include="..\..\..\Common\Source\Renderbuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Common\Source\ObjMng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Common\Headers\Buffer.hpp">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Common\Headers\Renderbuffer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Headers\ObjMng.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

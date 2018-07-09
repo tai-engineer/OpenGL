@@ -97,6 +97,8 @@ void RenderToTexture::setup_application()
 	setupVAO();
 	setupFBO();
 	loadTexture();
+
+	objMng->print();
 }
 
 void RenderToTexture::loadTexture()
@@ -116,6 +118,7 @@ void RenderToTexture::render()
 
 void RenderToTexture::setupVAO()
 {
+	objMng		= NULL;
 	cubeVAO		= NULL;
 	cubeVBO		= NULL;
 	planeVAO	= NULL;
@@ -123,14 +126,22 @@ void RenderToTexture::setupVAO()
 	quadVAO		= NULL;
 	quadVBO		= NULL;
 
-	cubeVAO = new VertexArray;
-	cubeVBO = new Buffer;
+	objMng = new ObjMng();
 
-	planeVAO = new VertexArray;
-	planeVBO = new Buffer;
+	//cubeVAO = new VertexArray;
+	//cubeVBO = new Buffer;
+	objMng->create<VertexArray>(&cubeVAO, "VertexArray");
+	objMng->create<Buffer>(&cubeVBO, "Buffer");
 
-	quadVAO = new VertexArray;
-	quadVBO = new Buffer;
+	//planeVAO = new VertexArray;
+	//planeVBO = new Buffer;
+	objMng->create<VertexArray>(&planeVAO, "VertexArray");
+	objMng->create<Buffer>(&planeVBO, "Buffer");
+
+	//quadVAO = new VertexArray;
+	//quadVBO = new Buffer;
+	objMng->create<VertexArray>(&quadVAO, "VertexArray");
+	objMng->create<Buffer>(&quadVBO, "Buffer");
 
 	glBindVertexArray(cubeVAO->getID());
 	glBindBuffer(GL_ARRAY_BUFFER, cubeVBO->getID());
@@ -173,10 +184,12 @@ void RenderToTexture::setupFBO()
 	texColorBuffer	= NULL;
 	renderBuffer	= NULL;
 
-	frameBuffer		= new Framebuffer();
-	texColorBuffer	= new Texture();
-	renderBuffer	= new Renderbuffer();
-
+	//frameBuffer		= new Framebuffer();
+	//texColorBuffer	= new Texture();
+	//renderBuffer	= new Renderbuffer();
+	objMng->create<Framebuffer>(&frameBuffer, "Framebuffer");
+	objMng->create<Texture>(&texColorBuffer, "Texture");
+	objMng->create<Renderbuffer>(&renderBuffer, "Renderbuffer");
 	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer->getID());
 
 	glBindTexture(GL_TEXTURE_2D, texColorBuffer->getID());

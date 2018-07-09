@@ -5,36 +5,36 @@
 #include "VertexArray.hpp"
 #include "Shader.hpp"
 #include "Texture.hpp"
-#include "VertexArray.hpp"
 #include "Camera.hpp"
 #include "Framebuffer.hpp"
 #include "Renderbuffer.hpp"
 
+#include "ObjMng.hpp"
 class RenderToTexture
 {
 
 public:
-	Shader*			fbProgram;
-	Shader*			quadProgram;
+	Shader*				fbProgram;
+	Shader*				quadProgram;
 	
-	VertexArray*	cubeVAO;
-	Buffer*			cubeVBO;
+	VertexArray*		cubeVAO;
+	Buffer*				cubeVBO;
 
-	VertexArray*	planeVAO;
-	Buffer*			planeVBO;
+	VertexArray*		planeVAO;
+	Buffer*				planeVBO;
 
-	VertexArray*	quadVAO;
-	Buffer*			quadVBO;
+	VertexArray*		quadVAO;
+	Buffer*				quadVBO;
 
-	Texture*		texMarble;
-	Texture*		texMetal;
+	Texture*			texMarble;
+	Texture*			texMetal;
 
-	Framebuffer*	frameBuffer;
-	Texture*		texColorBuffer;
-	Renderbuffer*	renderBuffer;	
+	Framebuffer*		frameBuffer;
+	Texture*			texColorBuffer;
+	Renderbuffer*		renderBuffer;	
 
-	Camera*			camera;
-
+	Camera*				camera;
+	ObjMng*	objMng;
 	bool initShader();
 	void setup_application();
 	void render();
