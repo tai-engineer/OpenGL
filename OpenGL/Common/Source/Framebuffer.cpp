@@ -1,16 +1,16 @@
-#include "Framebuffer.hpp"
+#include "FrameBuffer.hpp"
 
-Framebuffer::Framebuffer()
+FrameBuffer::FrameBuffer()
 {
 	glGenFramebuffers(1, &ID);
 }
 
-GLuint Framebuffer::getID()
+GLuint FrameBuffer::getID()
 {
 	return ID;
 }
 
-void Framebuffer::deleteFramebuffer()
+void FrameBuffer::deleteFramebuffer()
 {
 	glDeleteFramebuffers(1, &ID);
 }

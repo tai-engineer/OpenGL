@@ -1,16 +1,16 @@
-#include "Renderbuffer.hpp"
+#include "RenderBuffer.hpp"
 
-Renderbuffer::Renderbuffer()
+RenderBuffer::RenderBuffer()
 {
 	glGenFramebuffers(1, &ID);
 }
 
-GLuint Renderbuffer::getID()
+GLuint RenderBuffer::getID()
 {
 	return ID;
 }
 
-void Renderbuffer::deleteRenderbuffer()
+void RenderBuffer::deleteRenderBuffer()
 {
 	glDeleteRenderbuffers(1, &ID);
 }
