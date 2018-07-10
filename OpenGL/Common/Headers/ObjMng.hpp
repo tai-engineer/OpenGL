@@ -15,32 +15,21 @@ class ObjMng
 {
 private:
 	std::map<const char*, std::vector<GLuint>> mDict;
-	std::map<const char*, std::vector<GLuint>>::iterator itmDict;
-	std::vector<GLuint>::iterator itvID;
+
+	void addDict(const char* type, GLuint ID);
 
 public:
 	template <typename T>
 	void create(T **object, const char* type);
 	void print();
+	void deleteAll();
 };
 
 template <typename T>
 void ObjMng::create(T **object, const char* type)
 {
-	std::vector<GLuint> vID;
 	*object = new T();
-	GLuint ID = (*object)->getID();
-
-	itmDict = mDict.find(type);
-	if (itmDict == mDict.end()) // key is not present
-	{
-		vID.push_back(ID);
-		mDict.insert(std::pair<const char*,std::vector<GLuint>>(type, vID));
-	}
-	else
-	{
-		mDict[type].push_back(ID);
-	}
+	addDict(type, (*object)->getID());
 }
 #endif // !_OBJMNG_HPP_
 

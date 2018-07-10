@@ -29,17 +29,18 @@ public:
 	Texture*			texMarble;
 	Texture*			texMetal;
 
-	Framebuffer*		frameBuffer;
+	FrameBuffer*		frameBuffer;
 	Texture*			texColorBuffer;
-	Renderbuffer*		renderBuffer;	
+	RenderBuffer*		renderBuffer;	
 
 	Camera*				camera;
+
 	ObjMng*	objMng;
 	bool initShader();
-	void setup_application();
+	void setupApplication();
 	void render();
 	Camera* getCameraObj();
-	void deleteAll();
+	void deleteApplication();
 
 private:
 	unsigned int Width;

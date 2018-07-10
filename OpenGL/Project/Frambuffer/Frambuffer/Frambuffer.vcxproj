@@ -129,9 +129,9 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Common\Source\Buffer.cpp" />
     <ClCompile Include="..\..\..\Common\Source\Camera.cpp" />
-    <ClCompile Include="..\..\..\Common\Source\Framebuffer.cpp" />
+    <ClCompile Include="..\..\..\Common\Source\FrameBuffer.cpp" />
     <ClCompile Include="..\..\..\Common\Source\ObjMng.cpp" />
-    <ClCompile Include="..\..\..\Common\Source\Renderbuffer.cpp" />
+    <ClCompile Include="..\..\..\Common\Source\RenderBuffer.cpp" />
     <ClCompile Include="..\..\..\Common\Source\Shader.cpp" />
     <ClCompile Include="..\..\..\Common\Source\Texture.cpp" />
     <ClCompile Include="..\..\..\Common\Source\VertexArray.cpp" />
@@ -141,9 +141,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Common\Headers\Buffer.hpp" />
     <ClInclude Include="..\..\..\Common\Headers\Camera.hpp" />
-    <ClInclude Include="..\..\..\Common\Headers\Framebuffer.hpp" />
+    <ClInclude Include="..\..\..\Common\Headers\FrameBuffer.hpp" />
     <ClInclude Include="..\..\..\Common\Headers\ObjMng.hpp" />
-    <ClInclude Include="..\..\..\Common\Headers\Renderbuffer.hpp" />
+    <ClInclude Include="..\..\..\Common\Headers\RenderBuffer.hpp" />
     <ClInclude Include="..\..\..\Common\Headers\Shader.hpp" />
     <ClInclude Include="..\..\..\Common\Headers\Texture.hpp" />
     <ClInclude Include="..\..\..\Common\Headers\VertexArray.hpp" />

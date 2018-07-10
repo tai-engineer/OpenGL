@@ -88,7 +88,7 @@ bool RenderToTexture::initShader()
 	return true;
 }
 
-void RenderToTexture::setup_application()
+void RenderToTexture::setupApplication()
 {
 	Width = 840;
 	Height = 480;
@@ -103,8 +103,8 @@ void RenderToTexture::setup_application()
 
 void RenderToTexture::loadTexture()
 {
-	texMarble = new Texture();
-	texMetal = new Texture();
+	objMng->create<Texture>(&texMarble, "Texture");
+	objMng->create<Texture>(&texMetal, "Texture");
 
 	texMarble->load("Textures/marble.jpg");
 	texMetal->load("Textures/metal.png");
@@ -128,18 +128,12 @@ void RenderToTexture::setupVAO()
 
 	objMng = new ObjMng();
 
-	//cubeVAO = new VertexArray;
-	//cubeVBO = new Buffer;
 	objMng->create<VertexArray>(&cubeVAO, "VertexArray");
 	objMng->create<Buffer>(&cubeVBO, "Buffer");
 
-	//planeVAO = new VertexArray;
-	//planeVBO = new Buffer;
 	objMng->create<VertexArray>(&planeVAO, "VertexArray");
 	objMng->create<Buffer>(&planeVBO, "Buffer");
 
-	//quadVAO = new VertexArray;
-	//quadVBO = new Buffer;
 	objMng->create<VertexArray>(&quadVAO, "VertexArray");
 	objMng->create<Buffer>(&quadVBO, "Buffer");
 
@@ -184,12 +178,9 @@ void RenderToTexture::setupFBO()
 	texColorBuffer	= NULL;
 	renderBuffer	= NULL;
 
-	//frameBuffer		= new Framebuffer();
-	//texColorBuffer	= new Texture();
-	//renderBuffer	= new Renderbuffer();
-	objMng->create<Framebuffer>(&frameBuffer, "Framebuffer");
+	objMng->create<FrameBuffer>(&frameBuffer, "FrameBuffer");
 	objMng->create<Texture>(&texColorBuffer, "Texture");
-	objMng->create<Renderbuffer>(&renderBuffer, "Renderbuffer");
+	objMng->create<RenderBuffer>(&renderBuffer, "RenderBuffer");
 	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer->getID());
 
 	glBindTexture(GL_TEXTURE_2D, texColorBuffer->getID());
@@ -270,20 +261,13 @@ Camera* RenderToTexture::getCameraObj()
 	return camera;
 }
 
-void RenderToTexture::deleteAll()
+void RenderToTexture::deleteApplication()
 {
 	fbProgram->deleteProgram();
 	quadProgram->deleteProgram();
-	cubeVAO->deleteVertexArray();
-	cubeVBO->deleteBuffer();
-	planeVAO->deleteVertexArray();
-	planeVBO->deleteBuffer();
-	quadVAO->deleteVertexArray();
-	quadVBO->deleteBuffer();
-	texMarble->deleteTexture();
-	texMetal->deleteTexture();
-	frameBuffer->deleteFramebuffer();
-	texColorBuffer->deleteTexture();
-	renderBuffer->deleteRenderbuffer();
-	delete[] camera;
+
+	objMng->deleteAll();
+
+	delete objMng;
+	delete camera;
 }

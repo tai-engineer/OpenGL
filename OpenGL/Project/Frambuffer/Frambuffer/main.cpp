@@ -39,7 +39,7 @@ int main() {
 		return false;
 
 	/* SETUP APPLICATION */
-	renderToTexture->setup_application();
+	renderToTexture->setupApplication();
 
 	while (!glfwWindowShouldClose(window)) 
 	{
@@ -58,7 +58,7 @@ int main() {
 	}
 
 	// close GL context and any other GLFW resources
-	renderToTexture->deleteAll();
+	renderToTexture->deleteApplication();
 
 	glfwTerminate();
 	return false;
