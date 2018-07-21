@@ -5,7 +5,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Workspace\OpenGL\Common\Headers;F:\Workspace\OpenGL\Header\Common;F:\Workspace\OpenGL\Include\stb-master;F:\Workspace\OpenGL\Include\glm;F:\Workspace\OpenGL\Include\glfw-3.2.1\include;F:\Workspace\OpenGL\Include\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Workspace\Git-repo\OpenGL\Common\Headers;F:\Workspace\Git-repo\OpenGL\Header\Common;F:\Workspace\Git-repo\OpenGL\Include\stb-master;F:\Workspace\Git-repo\OpenGL\Include\glm;F:\Workspace\Git-repo\OpenGL\Include\glfw-3.2.1\include;F:\Workspace\Git-repo\OpenGL\Include\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

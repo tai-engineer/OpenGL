@@ -10,6 +10,10 @@
 #include "Renderbuffer.hpp"
 
 #include "ObjMng.hpp"
+
+#define USE_MODEL
+
+using namespace std;
 class RenderToTexture
 {
 
@@ -35,7 +39,13 @@ public:
 
 	Camera*				camera;
 
-	ObjMng*	objMng;
+	ObjMng*				objMng;
+
+#if defined USE_MODEL
+	Buffer* vertexVBO = NULL;
+	Buffer* uvVBO = NULL;
+#endif
+
 	bool initShader();
 	void setupApplication();
 	void render();
@@ -52,6 +62,20 @@ private:
 	void loadTexture();
 	void renderTexture();
 	void renderScene();
+
+#if defined USE_MODEL
+	vector<glm::vec3> vertices;
+	vector<glm::vec2> textures;
+	vector<glm::vec3> normals;
+
+	vector<string> split(const string str, const char &delimiter);
+	void ParseToVector(const char* x, const char* y, const char* z, glm::vec3* vt);
+	void ParseToVector(const char* x, const char* y, glm::vec2* vt);
+	void ArrangeFromIndex(vector<glm::vec3>* vec3, unsigned int index, vector<glm::vec3>* vVec3);
+	void ArrangeFromIndex(vector<glm::vec2>* vec2, unsigned int index, vector<glm::vec2>* vVec2);
+	void LoadModel(const char* objFile, vector<glm::vec3>* vertices, vector<glm::vec2>* textures, vector<glm::vec3>* normals);
+#endif
+
 };
 #endif // !_FRAMEBUFFER_HPP_
 
