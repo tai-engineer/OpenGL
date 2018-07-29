@@ -252,12 +252,10 @@ void RenderToTexture::renderTexture()
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 #endif
 
+#if ndefined USE_MODEL
 	Model = glm::mat4(1.0f);
 	Model = glm::translate(Model, glm::vec3(2.0f, 0.0f, 0.0f));
 	fbProgram->setMat4("Model", Model);
-#if defined USE_MODEL
-	glDrawArrays(GL_TRIANGLES, 0, vertices.size());
-#else
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 #endif
 
